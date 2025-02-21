@@ -3,38 +3,54 @@
 @tailwind utilities;
 
 @layer base {
-	/* body {
-		transition: background-color 0.5s ease;
-	} */
+  :root {
+    --midnight-blue: #0e1a31;
+    --gold-accent: #d4af37;
+    --off-white: #f7f5f0;
+    --cosmic-purple: #372549;
+    --text-dark: #222222;
+    --text-light: #f7f5f0;
+  }
 
-	.prose code {
-		@apply text-base;
-	}
+  /* Prose typography using Kismetra colors */
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    color: var(--text-dark) !important;
+  }
 
-	/* prose styles here */
-	.prose h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		@apply text-zinc-800 dark:text-zinc-100   !important;
-	}
+  html.dark .prose h1,
+  html.dark .prose h2,
+  html.dark .prose h3,
+  html.dark .prose h4,
+  html.dark .prose h5,
+  html.dark .prose h6 {
+    color: var(--text-light) !important;
+  }
 
-	html.dark .shiki,
-	html.dark .shiki span {
-	  color: var(--shiki-dark) !important;
-	  background-color: theme(colors.gray.900) !important;
-	}
+  .prose code {
+    @apply text-base;
+  }
+
+  /* Shiki syntax highlighting adjustments for dark mode */
+  html.dark .shiki,
+  html.dark .shiki span {
+    color: var(--gold-accent) !important;
+    background-color: var(--midnight-blue) !important;
+  }
 }
 
+/* Modified glass effect using midnight-blue */
 .glass {
-	background: rgba(57, 56, 56, 0.52);
-	backdrop-filter: blur(13px) saturate(150%);
-	-webkit-backdrop-filter: blur(13px) saturate(150%);
-	z-index: -1;
+  background: rgba(14, 26, 49, 0.85);
+  backdrop-filter: blur(13px) saturate(150%);
+  -webkit-backdrop-filter: blur(13px) saturate(150%);
+  z-index: -1;
 }
 
 .shadow {
-	box-shadow: -5px 3px 8px 1px rgba(0, 0, 0, 0.12);
+  box-shadow: -5px 3px 8px 1px rgba(0, 0, 0, 0.12);
 }
