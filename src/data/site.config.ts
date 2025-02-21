@@ -10,12 +10,12 @@ interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-	site: 'https://blog-template-gray.vercel.app/', // Write here your website url
-	author: 'Your Name', // Site author
-	title: 'Astro Theme OpenBlog', // Site title.
-	description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', // Description to display in the meta tags
+	site: 'https://marvelous-rugelach-bd7ba0.netlify.app/',
+	author: 'Aloeidae', 
+	title: 'Kismetra', 
+	description: 'Kismetra unveils hidden cultural gems, mystical traditions, and everyday wonders—exploring the strange, the superstitious, and the surprisingly familiar.', 
 	lang: 'en-GB',
 	ogLocale: 'en_GB',
-	shareMessage: 'Share this post', // Message to share a post on social media
-	paginationSize: 6 // Number of posts per page
+	shareMessage: 'Share this post', 
+	paginationSize: 6 
 }
