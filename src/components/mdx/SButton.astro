@@ -2,7 +2,10 @@
 const props = Astro.props
 ---
 
-<button {...props} class='bg-purple-800 p-4 text-white rounded-full'>
+<button
+	{...props}
+	class="bg-[var(--cosmic-purple)] p-4 text-[var(--off-white)] rounded-full hover:bg-[var(--gold-accent)] hover:text-[var(--midnight-blue)] transition-colors duration-150 ease-linear"
+>
 	<slot />
 	<!-- Be sure to add a `<slot/>` for child content! -->
 </button>

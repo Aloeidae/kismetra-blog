@@ -3,33 +3,31 @@ import { cn } from '@/utils'
 const { heading } = Astro.props
 
 type Heading = {
-	depth: number
-	text: string
-	slug: string
-	subheadings: Heading[]
+  depth: number
+  text: string
+  slug: string
+  subheadings: Heading[]
 }
 
 export interface Props {
-	heading: Heading
+  heading: Heading
 }
 ---
 
-<li class='flex flex-col'>
+<li class="flex flex-col">
 	<a
 		href={'#' + heading.slug}
 		class={cn(
-			`bg-slate-200 dark:bg-slate-800 dark:hover:bg-indigo-400 hover:bg-indigo-300 hover:text-white  py-1 px-4 dark:text-white rounded-full mb-2 first-letter:uppercase w-fit line-clamp-2`
+			`bg-[var(--off-white)] dark:bg-[var(--midnight-blue)] text-[var(--text-dark)] dark:text-[var(--text-light)] py-1 px-4 rounded-full mb-2 first-letter:uppercase w-fit line-clamp-2 transition-colors duration-150 ease-linear hover:bg-[var(--gold-accent)] hover:text-[var(--midnight-blue)] dark:hover:bg-[var(--gold-accent)] dark:hover:text-[var(--midnight-blue)]`
 		)}
 	>
 		{heading.text}
 	</a>
-	{
-		heading.subheadings.length > 0 && (
-			<ul class='ml-3'>
-				{heading.subheadings.map((subheading) => (
-					<Astro.self heading={subheading} />
-				))}
-			</ul>
-		)
-	}
+	{heading.subheadings.length > 0 && (
+		<ul class="ml-3">
+			{heading.subheadings.map((subheading) => (
+				<Astro.self heading={subheading} />
+			))}
+		</ul>
+	)}
 </li>
